@@ -18,8 +18,6 @@ export default class Main extends cc.Component {
   @property(cc.Node)
   appStoreBtn: cc.Node = null;
   @property(cc.Node)
-  landscapeNode: cc.Node = null;
-  @property(cc.Node)
   mainContent: cc.Node = null;
   @property(cc.Animation)
   loadingAnim: cc.Animation = null;
@@ -100,33 +98,50 @@ export default class Main extends cc.Component {
     this.mainContent.setScale(mainContentScale);
     let posx = size.width / 4;
     this.mainContent.setPosition(posx, 0);
-    this.node.getChildByName("background").active = false;
+    this.node.getChildByName("vbg").active = false;
+    this.node.getChildByName("hbg").active = true;
 
+    // 隐藏 下载按钮，下移
     this.bottomNodes.getChildByName("downloadBtn").opacity = 0;
     this.bottomNodes.getChildByName("indicators").active = true;
-    this.bottomNodes.getComponent(cc.Widget).bottom = 10;
-    this.bottomNodes.getComponent(cc.Widget).updateAlignment();
-    this.landscapeNode.scale = 1;
+    // this.bottomNodes.setPosition(-727);
+    // let bottomWidget = this.bottomNodes.getComponent(cc.Widget);
+    // bottomWidget.bottom = -86;
+    // bottomWidget.updateAlignment();
   }
   /**竖屏设置 */
   _onPortrait(canvas: cc.Canvas) {
     canvas.designResolution = new cc.Size(720, 1280);
     canvas.fitHeight = true;
     canvas.fitWidth = false;
-    this.landscapeNode.scale = 0;
     let size = cc.view.getVisibleSize();
-    this.mainContent.setScale(size.width >= 720 ? 1 : size.width / 740);
+    this.leftNodes.setScale(0);
+    let maxHeight = size.height;
+    this.mainContent.setScale(
+      Math.min(
+        size.width / this.mainContent.width,
+        maxHeight / this.mainContent.height,
+      ),
+    );
+    // this.mainContent.setScale(size.width >= 720 ? 1 : size.width / 720);
     this.mainContent.setPosition(0, 0);
-    this.node.getChildByName("background").active = true;
-
+    this.node.getChildByName("vbg").active = true;
+    this.node.getChildByName("hbg").active = false;
     if (this._round === 3) {
       this.bottomNodes.getChildByName("downloadBtn").opacity = 255;
       this.bottomNodes.getChildByName("indicators").active = false;
-      this.bottomNodes.getComponent(cc.Widget).bottom = 100;
+      // 显示 下载按钮，上移
+      // this.bottomNodes.setPosition(-628);
+      // this.bottomNodes.getComponent(cc.Widget).bottom = 15;
     } else {
-      this.bottomNodes.getComponent(cc.Widget).bottom = 10;
+      // this.bottomNodes.getComponent(cc.Widget).bottom = 10;
+      this.bottomNodes.getChildByName("downloadBtn").opacity = 0;
+      this.bottomNodes.getChildByName("indicators").active = true;
+      // 隐藏 下载按钮，下移
+      // this.bottomNodes.getComponent(cc.Widget).bottom = -86;
+      // console.log("隐藏 下载按钮，下移");
     }
-    this.bottomNodes.getComponent(cc.Widget).updateAlignment();
+    // this.bottomNodes.getComponent(cc.Widget).updateAlignment();
   }
 
   _setGridImgs(assets: cc.SpriteFrame[]) {
@@ -143,7 +158,6 @@ export default class Main extends cc.Component {
       child.scale = 0;
     });
     this.categoryTitle.string = this._titleList[0];
-    this.downloadBtn.active = false;
     this.congratulation.opacity = 0;
   }
 
@@ -199,7 +213,6 @@ export default class Main extends cc.Component {
   }
 
   onFadeInEnd() {
-    this.canClick = true;
     // 获取指定的图片位置
     let target = this.imgGrid.children[this._targetIndex[this._round]];
     let tempPos = target.parent.convertToWorldSpaceAR(target.position);
@@ -208,6 +221,9 @@ export default class Main extends cc.Component {
       .to(0.5, {
         opacity: 255,
         position: cc.v3(targetPos.x, targetPos.y),
+      })
+      .call(() => {
+        this.canClick = true;
       })
       .start();
   }
@@ -251,14 +267,26 @@ export default class Main extends cc.Component {
       this.imgGrid.active = false;
       if (this._isLandscape == false) {
         // 如果是竖屏
-        this.downloadBtn.active = true;
         this.indicators.active = false;
-        this.bottomNodes.getComponent(cc.Widget).bottom = 100;
-        this.bottomNodes.getComponent(cc.Widget).updateAlignment();
+        this.bottomNodes.getChildByName("downloadBtn").opacity = 255;
+        // this.bottomNodes.getComponent(cc.Widget).bottom = 15;
+        // this.bottomNodes.getComponent(cc.Widget).updateAlignment();
+        // console.log("main content scale", this.mainContent.scale);
+        let screen = cc.view.getVisibleSize();
+        let maxHeight = screen.height;
+        // console.log("main content height", this.mainContent.height);
+        // console.log("宽度倍数", screen.width / this.mainContent.width);
+        // console.log("高度倍数", maxHeight / this.mainContent.height);
+        this.mainContent.setScale(
+          Math.min(
+            screen.width / this.mainContent.width,
+            maxHeight / this.mainContent.height,
+          ),
+        );
       }
       cc.tween(this.congratulation).to(0.4, { opacity: 255 }).start();
       this.onGameEnd();
-    }, 4);
+    }, 2);
   }
 
   onGameReady() {
