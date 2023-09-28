@@ -4,5 +4,6 @@
   "version": "2.4.11",
   "name": "SpellaiPlayable",
   "id": "aa78d164-7f23-49ae-b3ac-45c875109cd3",
-  "isNew": false
+  "isNew": false,
+  "splash": false
 }
