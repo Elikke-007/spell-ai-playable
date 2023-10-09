@@ -41,8 +41,8 @@ export default class Main extends cc.Component {
   @property(cc.Node)
   selectedBox: cc.Node = null;
 
-  @property(cc.Node)
-  indicators: cc.Node = null;
+  // @property(cc.Node)
+  // indicators: cc.Node = null;
 
   @property(cc.SpriteFrame)
   whiteCircle: cc.SpriteFrame = null;
@@ -103,11 +103,6 @@ export default class Main extends cc.Component {
 
     // 隐藏 下载按钮，下移
     this.bottomNodes.getChildByName("downloadBtn").opacity = 0;
-    this.bottomNodes.getChildByName("indicators").active = true;
-    // this.bottomNodes.setPosition(-727);
-    // let bottomWidget = this.bottomNodes.getComponent(cc.Widget);
-    // bottomWidget.bottom = -86;
-    // bottomWidget.updateAlignment();
   }
   /**竖屏设置 */
   _onPortrait(canvas: cc.Canvas) {
@@ -128,20 +123,12 @@ export default class Main extends cc.Component {
     this.node.getChildByName("vbg").active = true;
     this.node.getChildByName("hbg").active = false;
     if (this._round === 3) {
+      this.bottomNodes.setPosition(0, -627);
       this.bottomNodes.getChildByName("downloadBtn").opacity = 255;
-      this.bottomNodes.getChildByName("indicators").active = false;
-      // 显示 下载按钮，上移
-      // this.bottomNodes.setPosition(-628);
-      // this.bottomNodes.getComponent(cc.Widget).bottom = 15;
     } else {
-      // this.bottomNodes.getComponent(cc.Widget).bottom = 10;
+      this.bottomNodes.setPosition(0, -730);
       this.bottomNodes.getChildByName("downloadBtn").opacity = 0;
-      this.bottomNodes.getChildByName("indicators").active = true;
-      // 隐藏 下载按钮，下移
-      // this.bottomNodes.getComponent(cc.Widget).bottom = -86;
-      // console.log("隐藏 下载按钮，下移");
     }
-    // this.bottomNodes.getComponent(cc.Widget).updateAlignment();
   }
 
   _setGridImgs(assets: cc.SpriteFrame[]) {
@@ -198,15 +185,11 @@ export default class Main extends cc.Component {
     } catch (error) {}
   }
   _onClickGoogle() {
-    // window.location.href =
-    //   "https://play.google.com/store/apps/details?id=com.ai.polyverse.spell";
     window.open(
       "https://play.google.com/store/apps/details?id=com.ai.polyverse.spell",
     );
   }
   _onClickAppStore() {
-    // window.location.href =
-    //   "https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340";
     window.open(
       "https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340",
     );
@@ -236,8 +219,8 @@ export default class Main extends cc.Component {
     this._round++;
     let index = this._round > 2 ? 2 : this._round;
     this.categoryTitle.string = this._titleList[index];
-    this.indicators.children[index].getComponent(cc.Sprite).spriteFrame =
-      this.whiteCircle;
+    // this.indicators.children[index].getComponent(cc.Sprite).spriteFrame =
+    //   this.whiteCircle;
     if (this._round < 3) {
       this._setGridImgs(this._round == 1 ? this.secondGroup : this.thirdGroup);
       this.fadeIn();
@@ -267,26 +250,13 @@ export default class Main extends cc.Component {
       this.imgGrid.active = false;
       if (this._isLandscape == false) {
         // 如果是竖屏
-        this.indicators.active = false;
+        // this.indicators.active = false;
         this.bottomNodes.getChildByName("downloadBtn").opacity = 255;
-        // this.bottomNodes.getComponent(cc.Widget).bottom = 15;
-        // this.bottomNodes.getComponent(cc.Widget).updateAlignment();
-        // console.log("main content scale", this.mainContent.scale);
-        let screen = cc.view.getVisibleSize();
-        let maxHeight = screen.height;
-        // console.log("main content height", this.mainContent.height);
-        // console.log("宽度倍数", screen.width / this.mainContent.width);
-        // console.log("高度倍数", maxHeight / this.mainContent.height);
-        this.mainContent.setScale(
-          Math.min(
-            screen.width / this.mainContent.width,
-            maxHeight / this.mainContent.height,
-          ),
-        );
+        cc.tween(this.bottomNodes).to(0.4, { y: -627 }).delay(0.5).start();
       }
       cc.tween(this.congratulation).to(0.4, { opacity: 255 }).start();
       this.onGameEnd();
-    }, 2);
+    }, 3);
   }
 
   onGameReady() {

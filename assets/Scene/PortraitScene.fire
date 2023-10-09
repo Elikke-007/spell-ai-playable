@@ -4631,7 +4631,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -627.4961428571428,
+        -730.948,
         0,
         0,
         0,
@@ -5854,7 +5854,7 @@
         "__id__": 146
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 148
@@ -6527,9 +6527,6 @@
     },
     "selectedBox": {
       "__id__": 109
-    },
-    "indicators": {
-      "__id__": 141
     },
     "whiteCircle": {
       "__uuid__": "e3177697-1ed8-4e45-8673-538f0dd7f077"
