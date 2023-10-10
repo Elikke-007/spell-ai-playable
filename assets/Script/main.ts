@@ -136,7 +136,11 @@ export default class Main extends cc.Component {
       btn.opacity = 0
     } else {
       // 竖屏
-      btn.opacity = 255
+      if(this._round === 3){
+        btn.opacity = 255
+      }else{
+        btn.opacity = 0
+      }
     }
     this.bottomNodes.setPosition(0, posY)
   }
@@ -196,7 +200,10 @@ export default class Main extends cc.Component {
 
   _onClickDownload() {
     try {
+      // MTG 渠道
       window.install && window.install()
+      // APP LOVIN 渠道
+      mraid && mraid.open?.call()
     } catch (error) {}
   }
   _onClickGoogle() {
