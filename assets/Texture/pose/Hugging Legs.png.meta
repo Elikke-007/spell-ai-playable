@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "aa345858-8e5c-4e04-9b74-e98c45c48c9b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "Hugging Legs": {
+      "ver": "1.0.6",
+      "uuid": "bbcac211-70b6-451c-9fc3-473f51c7190e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "aa345858-8e5c-4e04-9b74-e98c45c48c9b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

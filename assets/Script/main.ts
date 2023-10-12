@@ -1,3 +1,4 @@
+import ChannelUnity from "./ChannelUnity"
 const { ccclass, property } = cc._decorator
 
 window["gameStart"] = () => {
@@ -65,6 +66,7 @@ export default class Main extends cc.Component {
   _targetIndex: number[] = [0, 3, 3]
 
   _titleList: string[] = ["Style", "Theme", "Pose"]
+  _unityChannel: ChannelUnity = new ChannelUnity(this.fadeIn.bind(this))
 
   onLoad(): void {
     this.onGameReady()
@@ -99,26 +101,34 @@ export default class Main extends cc.Component {
     this.leftNodes.setPosition(size.width / 4, 0)
     this._setBottomNodes()
     let mainContent = this.portraitNode.getChildByName("mainContent")
-    this.congratulation.setScale(size.height / ((this.congratulation.height-79)*mainContent.scale))
+    this.congratulation.setScale(size.height / ((1280 - 80) * mainContent.scale))
+    console.log('data',[this.bottomNodes.height,mainContent.scale,this.congratulation.height,this.congratulation.scale])
+    let marginTop = (size.height - (this.bottomNodes.height - 79)*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
+    let posY = (size.height/2 -  marginTop)/mainContent.scale
+    console.log('margin',marginTop)
+    console.log('posY',posY)
+    this.congratulation.setPosition(0,posY)
   }
   /**竖屏设置 */
   _onPortrait(canvas: cc.Canvas) {
     canvas.designResolution = new cc.Size(720, 1280)
     this.landscapeNode.active = false
     let size = cc.view.getVisibleSize()
-    // console.log("竖屏尺寸", size)
+    console.log("竖屏尺寸", size)
     this._changeMainContent()
     this._setBottomNodes()
-    this.congratulation.setScale(
-      Math.min(size.width / this.congratulation.width, size.height / this.congratulation.height),
-    )
+    this.congratulation.setScale(Math.min(size.width / 720, size.height / 1280))
+    let mainContent = this.portraitNode.getChildByName("mainContent")
+    let posY = size.height/2 -  (size.height - this.bottomNodes.height*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
+    this.congratulation.setPosition(0,posY)
   }
 
   _changeMainContent() {
     let size = cc.view.getVisibleSize()
     let mainContent = this.portraitNode.getChildByName("mainContent")
     if (this._isLandscape) {
-      mainContent.setScale(size.height / mainContent.height)
+      mainContent.setScale(Math.min(size.height / 1280,size.width/2 / 640))
+      // console.log('maincontent scale',[size.height,mainContent.height,size.width, mainContent.scale])
       mainContent.setPosition(size.width / 4, 0)
       this.portraitNode.getChildByName("vbg").opacity = 0
     } else {
@@ -129,16 +139,16 @@ export default class Main extends cc.Component {
   }
 
   _setBottomNodes() {
-    let posY:number = this._calcBottomNodesPosY()
+    let posY: number = this._calcBottomNodesPosY()
     let btn = this.bottomNodes.getChildByName("downloadBtn")
     if (this._isLandscape) {
       // 横屏
       btn.opacity = 0
     } else {
       // 竖屏
-      if(this._round === 3){
+      if (this._round === 3) {
         btn.opacity = 255
-      }else{
+      } else {
         btn.opacity = 0
       }
     }
@@ -146,11 +156,10 @@ export default class Main extends cc.Component {
   }
   _calcBottomNodesPosY() {
     let size = cc.view.getVisibleSize()
-    let posY:number = 0
+    let posY: number = 0
     if (this._isLandscape) {
       // 横屏
-      let mainContent = this.portraitNode.getChildByName("mainContent")
-      posY = -mainContent.height / 2 - this.bottomNodes.getChildByName("downloadBtn").height - 8
+      posY = -1280 / 2 - this.bottomNodes.getChildByName("downloadBtn").height - 8
     } else {
       // 竖屏
       if (this._round === 3) {
@@ -180,7 +189,11 @@ export default class Main extends cc.Component {
   }
 
   start() {
-    this.fadeIn()
+    let isUnity = this._unityChannel.start()
+    if (!isUnity) {
+      console.log("不是 unity 渠道")
+      this.fadeIn()
+    }
     this.imgGrid.on(cc.Node.EventType.TOUCH_END, this._onClickImg.bind(this))
     this.googlePlayBtn.on(cc.Node.EventType.TOUCH_END, this._onClickGoogle.bind(this))
     this.appStoreBtn.on(cc.Node.EventType.TOUCH_END, this._onClickAppStore.bind(this))
@@ -203,7 +216,11 @@ export default class Main extends cc.Component {
       // MTG 渠道
       window.install && window.install()
       // APP LOVIN 渠道
-      mraid && mraid.open?.call()
+      mraid && mraid.open?.call(this)
+      // unity
+      this._unityChannel.onDownload()
+      // TikTok
+      window.openAppStore && window.openAppStore()
     } catch (error) {}
   }
   _onClickGoogle() {

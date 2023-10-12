@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "9628027f-84bd-42b5-bf6b-713375aae30c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "FairyTale": {
+      "ver": "1.0.6",
+      "uuid": "b9d4caf2-a1a5-4a8f-87d2-4bb3a4f0dc50",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "9628027f-84bd-42b5-bf6b-713375aae30c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
