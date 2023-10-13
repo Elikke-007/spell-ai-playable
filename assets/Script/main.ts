@@ -1,12 +1,6 @@
 import { IEvent } from "./ChannelManager"
 const { ccclass, property } = cc._decorator
 
-// window["gameStart"] = () => {
-//   console.log("gameStart")
-// }
-// window["gameClose"] = () => {
-//   console.log("gameClose")
-// }
 export const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.ai.polyverse.spell'
 export const appStoreUrl = 'https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340'
 @ccclass
@@ -67,8 +61,6 @@ export default class Main extends cc.Component {
   _targetIndex: number[] = [0, 3, 3]
 
   _titleList: string[] = ["Style", "Theme", "Pose"]
-  // _unityChannel: ChannelUnity = new ChannelUnity(this.fadeIn.bind(this))
-  // _ironSourceChannel: ChannelIronSource = new ChannelIronSource(this.fadeIn.bind(this))
 
   onLoad(): void {
     this._init()

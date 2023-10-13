@@ -8,7 +8,7 @@
             "body": "<script>window['gameStart']=()=>{};window['gameClose']=()=>{}</script>"
         },
         "Tiktok": {
-            "body": "<script>window.openAppStore=function(){}</script>"
+            "body": "<script>window['openAppStore']=function(){}</script>"
         },
         "Unity": {
             "body": "<script>if(mraid.getState()==='loading'){mraid.addEventListener('ready',onSdkReady)}else{onSdkReady()}function viewableChangeHandler(viewable){if(viewable){showMyAd()}else{}}function onSdkReady(){mraid.addEventListener('viewableChange',viewableChangeHandler);if(mraid.isViewable()){showMyAd()}}function showMyAd(){}</script>"
