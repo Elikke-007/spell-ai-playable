@@ -57,8 +57,7 @@ class ChannelUnity {
       if (/android/i.test(userAgent)) {
         url = android
       }
-      if (!mraid) return
-      mraid.open(url)
+      mraid && mraid.open(url)
     } catch (err) {}
   }
 }
