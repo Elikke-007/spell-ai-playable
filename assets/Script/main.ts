@@ -103,11 +103,8 @@ export default class Main extends cc.Component {
     this._setBottomNodes()
     let mainContent = this.portraitNode.getChildByName("mainContent")
     this.congratulation.setScale(size.height / ((1280 - 80) * mainContent.scale))
-    // console.log('data',[this.bottomNodes.height,mainContent.scale,this.congratulation.height,this.congratulation.scale])
     let marginTop = (size.height - (this.bottomNodes.height - 79)*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
     let posY = (size.height/2 -  marginTop)/mainContent.scale
-    // console.log('margin',marginTop)
-    // console.log('posY',posY)
     this.congratulation.setPosition(0,posY)
   }
   /**竖屏设置 */
