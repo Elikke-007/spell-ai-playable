@@ -1,3 +1,4 @@
+import ChannelIronSource from "./ChannelIronSource"
 import ChannelUnity from "./ChannelUnity"
 const { ccclass, property } = cc._decorator
 
@@ -66,7 +67,8 @@ export default class Main extends cc.Component {
   _targetIndex: number[] = [0, 3, 3]
 
   _titleList: string[] = ["Style", "Theme", "Pose"]
-  _unityChannel: ChannelUnity = new ChannelUnity(this.fadeIn.bind(this))
+  // _unityChannel: ChannelUnity = new ChannelUnity(this.fadeIn.bind(this))
+  // _ironSourceChannel: ChannelIronSource = new ChannelIronSource(this.fadeIn.bind(this))
 
   onLoad(): void {
     this.onGameReady()
@@ -94,7 +96,7 @@ export default class Main extends cc.Component {
     canvas.designResolution = new cc.Size(1280, 720)
     this.landscapeNode.active = true
     let size = cc.view.getVisibleSize()
-    console.log("横屏尺寸", size)
+    // console.log("横屏尺寸", size)
     this._changeMainContent()
     let leftNodesScale = Math.min(size.height / 720, 1)
     this.leftNodes.setScale(leftNodesScale)
@@ -102,11 +104,11 @@ export default class Main extends cc.Component {
     this._setBottomNodes()
     let mainContent = this.portraitNode.getChildByName("mainContent")
     this.congratulation.setScale(size.height / ((1280 - 80) * mainContent.scale))
-    console.log('data',[this.bottomNodes.height,mainContent.scale,this.congratulation.height,this.congratulation.scale])
+    // console.log('data',[this.bottomNodes.height,mainContent.scale,this.congratulation.height,this.congratulation.scale])
     let marginTop = (size.height - (this.bottomNodes.height - 79)*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
     let posY = (size.height/2 -  marginTop)/mainContent.scale
-    console.log('margin',marginTop)
-    console.log('posY',posY)
+    // console.log('margin',marginTop)
+    // console.log('posY',posY)
     this.congratulation.setPosition(0,posY)
   }
   /**竖屏设置 */
@@ -114,7 +116,7 @@ export default class Main extends cc.Component {
     canvas.designResolution = new cc.Size(720, 1280)
     this.landscapeNode.active = false
     let size = cc.view.getVisibleSize()
-    console.log("竖屏尺寸", size)
+    // console.log("竖屏尺寸", size)
     this._changeMainContent()
     this._setBottomNodes()
     this.congratulation.setScale(Math.min(size.width / 720, size.height / 1280))
@@ -189,11 +191,9 @@ export default class Main extends cc.Component {
   }
 
   start() {
-    let isUnity = this._unityChannel.start()
-    if (!isUnity) {
-      console.log("不是 unity 渠道")
-      this.fadeIn()
-    }
+    // this._unityChannel.start()
+    // this._ironSourceChannel.start()
+    this.fadeIn()
     this.imgGrid.on(cc.Node.EventType.TOUCH_END, this._onClickImg.bind(this))
     this.googlePlayBtn.on(cc.Node.EventType.TOUCH_END, this._onClickGoogle.bind(this))
     this.appStoreBtn.on(cc.Node.EventType.TOUCH_END, this._onClickAppStore.bind(this))
@@ -218,9 +218,11 @@ export default class Main extends cc.Component {
       // APP LOVIN 渠道
       mraid && mraid.open?.call(this)
       // unity
-      this._unityChannel.onDownload()
+      ChannelUnity.onDownload()
       // TikTok
       window.openAppStore && window.openAppStore()
+      // ironSource
+      ChannelIronSource.onDownload()
     } catch (error) {}
   }
   _onClickGoogle() {
