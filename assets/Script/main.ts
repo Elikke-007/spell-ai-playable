@@ -1,14 +1,14 @@
-import ChannelIronSource from "./ChannelIronSource"
-import ChannelUnity from "./ChannelUnity"
+import { IEvent } from "./ChannelManager"
 const { ccclass, property } = cc._decorator
 
-window["gameStart"] = () => {
-  console.log("gameStart")
-}
-window["gameClose"] = () => {
-  console.log("gameClose")
-}
-
+// window["gameStart"] = () => {
+//   console.log("gameStart")
+// }
+// window["gameClose"] = () => {
+//   console.log("gameClose")
+// }
+export const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.ai.polyverse.spell'
+export const appStoreUrl = 'https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340'
 @ccclass
 export default class Main extends cc.Component {
   @property(cc.Node)
@@ -71,7 +71,6 @@ export default class Main extends cc.Component {
   // _ironSourceChannel: ChannelIronSource = new ChannelIronSource(this.fadeIn.bind(this))
 
   onLoad(): void {
-    this.onGameReady()
     this._init()
     cc.view.setResizeCallback(this._onScreenChanged.bind(this))
     this._onScreenChanged()
@@ -191,6 +190,7 @@ export default class Main extends cc.Component {
   }
 
   start() {
+    this.node.emit(IEvent.GAME_READY)
     // this._unityChannel.start()
     // this._ironSourceChannel.start()
     this.fadeIn()
@@ -212,24 +212,25 @@ export default class Main extends cc.Component {
   }
 
   _onClickDownload() {
-    try {
-      // MTG 渠道
-      window.install && window.install()
-      // APP LOVIN 渠道
-      mraid && mraid.open?.call(this)
-      // unity
-      ChannelUnity.onDownload()
-      // TikTok
-      window.openAppStore && window.openAppStore()
-      // ironSource
-      ChannelIronSource.onDownload()
-    } catch (error) {}
+    this.node.emit(IEvent.CLICK_DOWNLOAD)
+    // try {
+    //   // MTG 渠道
+    //   window.install && window.install()
+    //   // APP LOVIN 渠道
+    //   mraid && mraid.open?.call(this)
+    //   // unity
+    //   ChannelUnity.onDownload()
+    //   // TikTok
+    //   window.openAppStore && window.openAppStore()
+    //   // ironSource
+    //   ChannelIronSource.onDownload()
+    // } catch (error) {}
   }
   _onClickGoogle() {
-    window.open("https://play.google.com/store/apps/details?id=com.ai.polyverse.spell")
+    window.open(googlePlayUrl)
   }
   _onClickAppStore() {
-    window.open("https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340")
+    window.open(appStoreUrl)
   }
 
   onFadeInEnd() {
@@ -290,18 +291,18 @@ export default class Main extends cc.Component {
         cc.tween(this.bottomNodes).to(0.4, { y: this._calcBottomNodesPosY() }).delay(0.5).start()
       }
       cc.tween(this.congratulation).to(0.4, { opacity: 255 }).start()
-      this.onGameEnd()
+      this.node.emit(IEvent.GAME_END)
     }, 1)
   }
 
-  onGameReady() {
-    try {
-      window.gameReady && window.gameReady()
-    } catch (error) {}
-  }
-  onGameEnd() {
-    try {
-      window.gameEnd && window.gameEnd()
-    } catch (error) {}
-  }
+  // onGameReady() {
+  //   try {
+  //     window.gameReady && window.gameReady()
+  //   } catch (error) {}
+  // }
+  // onGameEnd() {
+  //   try {
+  //     window.gameEnd && window.gameEnd()
+  //   } catch (error) {}
+  // }
 }

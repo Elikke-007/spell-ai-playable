@@ -91,6 +91,9 @@
       },
       {
         "__id__": 161
+      },
+      {
+        "__id__": 162
       }
     ],
     "_prefab": null,
@@ -6804,5 +6807,15 @@
     ],
     "playOnLoad": false,
     "_id": "0dNZdrHCdG76/XzmLscXB3"
+  },
+  {
+    "__type__": "01d4ehTYUlC6LmF2uWGcgiH",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "_id": "cfz+MnzeBKGaTJJ0/VqgKG"
   }
 ]
