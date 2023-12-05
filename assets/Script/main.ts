@@ -5,6 +5,8 @@ export const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.
 export const appStoreUrl = 'https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340'
 @ccclass
 export default class Main extends cc.Component {
+  @property(cc.Label)
+  stepLabel: cc.Label = null
   @property(cc.Node)
   portraitNode: cc.Node = null
   @property(cc.Node)
@@ -39,9 +41,6 @@ export default class Main extends cc.Component {
   @property(cc.Node)
   selectedBox: cc.Node = null
 
-  // @property(cc.Node)
-  // indicators: cc.Node = null;
-
   @property(cc.SpriteFrame)
   whiteCircle: cc.SpriteFrame = null
   @property(cc.Node)
@@ -58,9 +57,9 @@ export default class Main extends cc.Component {
   contentAnim: cc.Animation = null
   canClick: boolean = false
   _isLandscape: boolean = false
-  _targetIndex: number[] = [0, 3, 3]
+  _targetIndex: number[] = [0, 5, 3]
 
-  _titleList: string[] = ["Style", "Theme", "Pose"]
+  _titleList: string[] = ["Select a Style", "Select a Theme", "Select a Pose"]
 
   onLoad(): void {
     this._init()
@@ -94,7 +93,8 @@ export default class Main extends cc.Component {
     this.leftNodes.setPosition(size.width / 4, 0)
     this._setBottomNodes()
     let mainContent = this.portraitNode.getChildByName("mainContent")
-    this.congratulation.setScale(size.height / ((1280 - 80) * mainContent.scale))
+    const conScale = size.height / ((1280 - 80) * mainContent.scale)
+    this.congratulation.setScale(conScale)
     let marginTop = (size.height - (this.bottomNodes.height - 79)*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
     let posY = (size.height/2 -  marginTop)/mainContent.scale
     this.congratulation.setPosition(0,posY)
@@ -107,9 +107,8 @@ export default class Main extends cc.Component {
     // console.log("竖屏尺寸", size)
     this._changeMainContent()
     this._setBottomNodes()
-    this.congratulation.setScale(Math.min(size.width / 720, size.height / 1280))
-    let mainContent = this.portraitNode.getChildByName("mainContent")
-    let posY = size.height/2 -  (size.height - this.bottomNodes.height*mainContent.scale - this.congratulation.height*mainContent.scale*this.congratulation.scale)/2
+    this.congratulation.setScale(1)
+    const posY = 640 - (1280 - this.bottomNodes.height - this.congratulation.height)/2
     this.congratulation.setPosition(0,posY)
   }
 
@@ -118,11 +117,11 @@ export default class Main extends cc.Component {
     let mainContent = this.portraitNode.getChildByName("mainContent")
     if (this._isLandscape) {
       mainContent.setScale(Math.min(size.height / 1280,size.width/2 / 640))
-      // console.log('maincontent scale',[size.height,mainContent.height,size.width, mainContent.scale])
       mainContent.setPosition(size.width / 4, 0)
       this.portraitNode.getChildByName("vbg").opacity = 0
     } else {
-      mainContent.setScale(Math.min(size.width / mainContent.width, size.height / mainContent.height))
+      const scale = Math.min(size.width / mainContent.width, size.height / mainContent.height)
+      mainContent.setScale(scale)
       mainContent.setPosition(0, 0)
       this.portraitNode.getChildByName("vbg").opacity = 255
     }
@@ -153,9 +152,9 @@ export default class Main extends cc.Component {
     } else {
       // 竖屏
       if (this._round === 3) {
-        posY = -size.height / 2 + 10
+        posY = -Math.max(1280,size.height) / 2 + 10
       } else {
-        posY = -size.height / 2 - this.bottomNodes.getChildByName("downloadBtn").height - 8
+        posY = -Math.max(1280,size.height) / 2 - this.bottomNodes.getChildByName("downloadBtn").height - 8
       }
     }
     return posY
@@ -175,13 +174,12 @@ export default class Main extends cc.Component {
       child.scale = 0
     })
     this.categoryTitle.string = this._titleList[0]
+    this.stepLabel.string = `Step 1`
     this.congratulation.opacity = 0
   }
 
   start() {
     this.node.emit(IEvent.GAME_READY)
-    // this._unityChannel.start()
-    // this._ironSourceChannel.start()
     this.fadeIn()
     this.imgGrid.on(cc.Node.EventType.TOUCH_END, this._onClickImg.bind(this))
     this.googlePlayBtn.on(cc.Node.EventType.TOUCH_END, this._onClickGoogle.bind(this))
@@ -202,18 +200,6 @@ export default class Main extends cc.Component {
 
   _onClickDownload() {
     this.node.emit(IEvent.CLICK_DOWNLOAD)
-    // try {
-    //   // MTG 渠道
-    //   window.install && window.install()
-    //   // APP LOVIN 渠道
-    //   mraid && mraid.open?.call(this)
-    //   // unity
-    //   ChannelUnity.onDownload()
-    //   // TikTok
-    //   window.openAppStore && window.openAppStore()
-    //   // ironSource
-    //   ChannelIronSource.onDownload()
-    // } catch (error) {}
   }
   _onClickGoogle() {
     window.open(googlePlayUrl)
@@ -246,8 +232,7 @@ export default class Main extends cc.Component {
     this._round++
     let index = this._round > 2 ? 2 : this._round
     this.categoryTitle.string = this._titleList[index]
-    // this.indicators.children[index].getComponent(cc.Sprite).spriteFrame =
-    //   this.whiteCircle;
+    this.stepLabel.string = `Step ${index+1}`
     if (this._round < 3) {
       this._setGridImgs(this._round == 1 ? this.secondGroup : this.thirdGroup)
       this.fadeIn()
@@ -284,14 +269,4 @@ export default class Main extends cc.Component {
     }, 1)
   }
 
-  // onGameReady() {
-  //   try {
-  //     window.gameReady && window.gameReady()
-  //   } catch (error) {}
-  // }
-  // onGameEnd() {
-  //   try {
-  //     window.gameEnd && window.gameEnd()
-  //   } catch (error) {}
-  // }
 }
