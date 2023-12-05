@@ -1830,7 +1830,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        1,
+        9,
         0,
         0,
         0,
@@ -1927,7 +1927,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -48,
+        -61,
         0,
         0,
         0,
@@ -2024,7 +2024,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -87,
+        -121,
         0,
         0,
         0,
@@ -2170,7 +2170,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        -65.071,
         0,
         0,
         0,
@@ -3987,7 +3987,7 @@
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
-    "_verticalCenter": 0,
+    "_verticalCenter": -65.071,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
     "_isAbsRight": true,
@@ -4491,7 +4491,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 0,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -4563,8 +4563,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 168,
-      "height": 50.4
+      "width": 218.4,
+      "height": 65.52
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4617,8 +4617,8 @@
     "_dstBlendFactor": 771,
     "_string": "Triumph!",
     "_N$string": "Triumph!",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 52,
+    "_lineHeight": 52,
     "_enableWrapText": true,
     "_N$file": {
       "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
@@ -4660,8 +4660,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 390.2,
-      "height": 65.52
+      "width": 327.88,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4714,11 +4714,13 @@
     "_dstBlendFactor": 771,
     "_string": "Create with ease",
     "_N$string": "Create with ease",
-    "_fontSize": 52,
-    "_lineHeight": 52,
+    "_fontSize": 40,
+    "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
