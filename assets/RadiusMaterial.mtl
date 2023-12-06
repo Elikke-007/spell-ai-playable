@@ -1,0 +1,44 @@
+{
+  "__type__": "cc.Material",
+  "_name": "RadiusMaterial",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "315f34cf-c10c-4210-933b-1eb028251748"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "size": {
+          "__type__": "cc.Vec2",
+          "x": 338,
+          "y": 79
+        },
+        "leftTop": {
+          "__type__": "cc.Vec2",
+          "x": 10,
+          "y": 10
+        },
+        "rightTop": {
+          "__type__": "cc.Vec2",
+          "x": 10,
+          "y": 10
+        },
+        "rightBottom": {
+          "__type__": "cc.Vec2",
+          "x": 10,
+          "y": 10
+        },
+        "leftBottom": {
+          "__type__": "cc.Vec2",
+          "x": 10,
+          "y": 10
+        }
+      }
+    }
+  }
+}
