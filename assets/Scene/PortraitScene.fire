@@ -983,7 +983,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 191.09,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1035,8 +1035,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ダウンロード",
-    "_N$string": "ダウンロード",
+    "_string": "Download",
+    "_N$string": "Download",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1946,7 +1946,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 306,
+      "width": 361.62,
       "height": 42.84
     },
     "_anchorPoint": {
@@ -1998,13 +1998,15 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "あなたの最初の傑作",
-    "_N$string": "あなたの最初の傑作",
+    "_string": "Your first Masterpiece",
+    "_N$string": "Your first Masterpiece",
     "_fontSize": 34,
     "_lineHeight": 34,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -2041,7 +2043,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 164.36,
+      "width": 105.26,
       "height": 42.84
     },
     "_anchorPoint": {
@@ -2093,13 +2095,15 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ステップ 1",
-    "_N$string": "ステップ 1",
+    "_string": "Step 1",
+    "_N$string": "Step 1",
     "_fontSize": 34,
     "_lineHeight": 34,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -2193,8 +2197,10 @@
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 1,
@@ -4686,7 +4692,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 139.98,
+      "width": 252,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -4738,13 +4744,15 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "勝利!",
-    "_N$string": "勝利!",
+    "_string": "Triumph!",
+    "_N$string": "Triumph!",
     "_fontSize": 60,
     "_lineHeight": 60,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "dea532ef-fba9-45e9-b499-a12dc128967c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 1,
@@ -4781,7 +4789,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 262.3,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -4833,8 +4841,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "簡単に作成",
-    "_N$string": "簡単に作成",
+    "_string": "Create with ease",
+    "_N$string": "Create with ease",
     "_fontSize": 32,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -5349,7 +5357,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 40.02,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5401,8 +5409,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "スタイル",
-    "_N$string": "スタイル",
+    "_string": "Style",
+    "_N$string": "Style",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -5708,7 +5716,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 108,
+      "width": 56.02,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5760,8 +5768,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "サブジェクト",
-    "_N$string": "サブジェクト",
+    "_string": "Theme",
+    "_N$string": "Theme",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -5805,7 +5813,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a86d44f9-99b5-411b-b01a-83c9cfcc85b6"
+      "__uuid__": "bf7baa48-770a-4505-b556-8dda249353fe"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -6067,7 +6075,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 54,
+      "width": 41.03,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -6119,8 +6127,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ポーズ",
-    "_N$string": "ポーズ",
+    "_string": "Pose",
+    "_N$string": "Pose",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -6164,7 +6172,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "40d96292-db01-4432-97db-c59602cac8dd"
+      "__uuid__": "e227d7c9-81a3-4a3c-91b7-f1debd29e4b8"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -6700,7 +6708,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 191.09,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6752,8 +6760,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ダウンロード",
-    "_N$string": "ダウンロード",
+    "_string": "Download",
+    "_N$string": "Download",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
