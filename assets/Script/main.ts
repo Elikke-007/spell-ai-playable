@@ -2,7 +2,7 @@ import { IEvent } from "./ChannelManager";
 const { ccclass, property } = cc._decorator;
 
 export const googlePlayUrl =
-  "https://play.google.com/store/apps/details?id=com.ai.polyverse.spell";
+  "https://play.google.com/store/apps/details?id=com.ai.polyverse.spell.pro";
 export const appStoreUrl =
   "https://apps.apple.com/us/app/spellai-ai-art-maker/id6446022340";
 @ccclass
