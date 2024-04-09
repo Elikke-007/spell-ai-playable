@@ -983,7 +983,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 191.09,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1035,8 +1035,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ダウンロード",
-    "_N$string": "ダウンロード",
+    "_string": "Download",
+    "_N$string": "Download",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1946,7 +1946,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 306,
+      "width": 327.55,
       "height": 42.84
     },
     "_anchorPoint": {
@@ -1998,8 +1998,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "あなたの最初の傑作",
-    "_N$string": "あなたの最初の傑作",
+    "_string": "Your first Masterpiece",
+    "_N$string": "Your first Masterpiece",
     "_fontSize": 34,
     "_lineHeight": 34,
     "_enableWrapText": true,
@@ -2041,7 +2041,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 164.36,
+      "width": 98.3,
       "height": 42.84
     },
     "_anchorPoint": {
@@ -2093,8 +2093,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ステップ 1",
-    "_N$string": "ステップ 1",
+    "_string": "Step 1",
+    "_N$string": "Step 1",
     "_fontSize": 34,
     "_lineHeight": 34,
     "_enableWrapText": true,
@@ -2136,7 +2136,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
+      "width": 316.87,
       "height": 63
     },
     "_anchorPoint": {
@@ -2188,8 +2188,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "スタイル選択",
-    "_N$string": "スタイル選択",
+    "_string": "Select a style",
+    "_N$string": "Select a style",
     "_fontSize": 50,
     "_lineHeight": 50,
     "_enableWrapText": true,
@@ -4686,7 +4686,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 139.98,
+      "width": 256.64,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -4738,8 +4738,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "勝利!",
-    "_N$string": "勝利!",
+    "_string": "Triumph!",
+    "_N$string": "Triumph!",
     "_fontSize": 60,
     "_lineHeight": 60,
     "_enableWrapText": true,
@@ -4781,7 +4781,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 262.3,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -4833,8 +4833,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "簡単に作成",
-    "_N$string": "簡単に作成",
+    "_string": "Create with ease",
+    "_N$string": "Create with ease",
     "_fontSize": 32,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -5349,7 +5349,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 40.02,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5401,8 +5401,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "スタイル",
-    "_N$string": "スタイル",
+    "_string": "Style",
+    "_N$string": "Style",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -5708,7 +5708,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 108,
+      "width": 56.02,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5760,8 +5760,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "サブジェクト",
-    "_N$string": "サブジェクト",
+    "_string": "Theme",
+    "_N$string": "Theme",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -6067,7 +6067,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 54,
+      "width": 41.03,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -6119,8 +6119,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ポーズ",
-    "_N$string": "ポーズ",
+    "_string": "Pose",
+    "_N$string": "Pose",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -6700,7 +6700,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 191.09,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6752,8 +6752,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "ダウンロード",
-    "_N$string": "ダウンロード",
+    "_string": "Download",
+    "_N$string": "Download",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
