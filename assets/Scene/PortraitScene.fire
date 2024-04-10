@@ -983,7 +983,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 191.09,
+      "width": 138.4,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1035,8 +1035,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Download",
-    "_N$string": "Download",
+    "_string": "다운로드",
+    "_N$string": "다운로드",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1946,7 +1946,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 361.62,
+      "width": 239.84,
       "height": 42.84
     },
     "_anchorPoint": {
@@ -1998,8 +1998,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Your first Masterpiece",
-    "_N$string": "Your first Masterpiece",
+    "_string": "첫 번째 예술 작품",
+    "_N$string": "첫 번째 예술 작품",
     "_fontSize": 34,
     "_lineHeight": 34,
     "_enableWrapText": true,
@@ -4692,7 +4692,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 252,
+      "width": 123.78,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -4744,8 +4744,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Triumph!",
-    "_N$string": "Triumph!",
+    "_string": "승리!",
+    "_N$string": "승리!",
     "_fontSize": 60,
     "_lineHeight": 60,
     "_enableWrapText": true,
@@ -4789,7 +4789,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 262.3,
+      "width": 149.06,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -4841,8 +4841,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Create with ease",
-    "_N$string": "Create with ease",
+    "_string": "손쉽게 제작",
+    "_N$string": "손쉽게 제작",
     "_fontSize": 32,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -5357,7 +5357,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40.02,
+      "width": 46.71,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5409,8 +5409,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Style",
-    "_N$string": "Style",
+    "_string": "스타일",
+    "_N$string": "스타일",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -5716,7 +5716,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56.02,
+      "width": 31.14,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -5768,8 +5768,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Theme",
-    "_N$string": "Theme",
+    "_string": "주제",
+    "_N$string": "주제",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -6075,7 +6075,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 41.03,
+      "width": 31.14,
       "height": 22.68
     },
     "_anchorPoint": {
@@ -6127,8 +6127,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Pose",
-    "_N$string": "Pose",
+    "_string": "포즈",
+    "_N$string": "포즈",
     "_fontSize": 18,
     "_lineHeight": 18,
     "_enableWrapText": true,
@@ -6708,7 +6708,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 191.09,
+      "width": 138.4,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6760,8 +6760,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Download",
-    "_N$string": "Download",
+    "_string": "다운로드",
+    "_N$string": "다운로드",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
