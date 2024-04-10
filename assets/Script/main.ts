@@ -59,7 +59,7 @@ export default class Main extends cc.Component {
   contentAnim: cc.Animation = null;
   canClick: boolean = false;
   _isLandscape: boolean = false;
-  _targetIndex: number[] = [0, 5, 3];
+  _targetIndex: number[] = [0, 3, 3];
 
   _titleList: string[] = ["Select a style", "Select a theme", "Select a pose"];
 
