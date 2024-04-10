@@ -61,7 +61,7 @@ export default class Main extends cc.Component {
   _isLandscape: boolean = false;
   _targetIndex: number[] = [0, 5, 3];
 
-  _titleList: string[] = ["Select a style", "Select a theme", "Select a pose"];
+  _titleList: string[] = ["스타일 선택", "테마 선택", "포즈 선택"];
 
   onLoad(): void {
     this._init();
@@ -194,7 +194,7 @@ export default class Main extends cc.Component {
       child.scale = 0;
     });
     this.categoryTitle.string = this._titleList[0];
-    this.stepLabel.string = `Step 1`;
+    this.stepLabel.string = `1단계`;
     this.congratulation.opacity = 0;
   }
 
@@ -264,7 +264,7 @@ export default class Main extends cc.Component {
     this._round++;
     let index = this._round > 2 ? 2 : this._round;
     this.categoryTitle.string = this._titleList[index];
-    this.stepLabel.string = `Step${index + 1}`;
+    this.stepLabel.string = `${index + 1}단계`;
     if (this._round < 3) {
       this._setGridImgs(this._round == 1 ? this.secondGroup : this.thirdGroup);
       this.fadeIn();
